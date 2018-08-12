@@ -2,17 +2,20 @@ const select = target => document.querySelector(target);
 const selectAll = target => document.querySelectorAll(target);
 const create = target => document.createElement(target);
 
-class HandlerMain {
+class Handler {
   constructor() {
     this.buttons = {
-      login: null,
-      register: null
+      login: select('#btn-login'),
+      register: select('#btn-register'),
+      admin : this.createAdminButton(),
     }
   }
 
-  assignButtons() {
-    this.buttons.login = select('#btn-login');
-    this.buttons.register = select('#btn-register');
+  createAdminButton() {
+    const anchor = create('a');
+    anchor.href = './admin';
+    anchor.innerText = 'Admin options';
+    return anchor;
   }
 
   hideButton(button) {
@@ -22,31 +25,13 @@ class HandlerMain {
   showButton(button) {
     this.buttons[button].style.display = 'block';
   }
-}
 
-class HandlerAdmin {
-  constructor() {
-    this.btn = null;
-    this.btnDiv = null;
-    this.createButton();
-  }
-
-  createButton() {
-    this.btn = create('a');
-    this.btnDiv = create('div');
-    this.btnDiv.appendChild(this.btn);
-    this.btn.href = './admin';
-    this.btn.innerText = 'Admin options';
-  }
-
-  placeElements(target) {
-    select(target).appendChild(this.btnDiv);
+  placeElement(parent, child, div = false) {
+    div ? select(parent).appendChild(create('div')).appendChild(child) : select(parent).appendChild(child);
   }
 }
 
 window.onload = () => {
-  const handlerAdmin = new HandlerAdmin();
-  const handlerMain = new HandlerMain();
-  handlerAdmin.placeElements('#options-links');
-  handlerMain.assignButtons();
+  const handler = new Handler();
+  handler.placeElement('#options-links', handler.buttons.admin, true);
 }
