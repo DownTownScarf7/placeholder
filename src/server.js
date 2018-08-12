@@ -29,6 +29,10 @@ app.get('/admin', (req, res) => {
   res.sendFile(path.join(__dirname, '../public', 'admin.html'));
 });
 
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public', 'registration.html'));
+});
+
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
