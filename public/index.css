@@ -25,6 +25,14 @@ header {
 }
 
 #options-links div {
+  margin: 0 5px;
+  padding: 5px 3px;
+  background: #2b1fd8;
   border-left: 2px solid #150061;
   border-right: 2px solid #150061;
+}
+
+#options-links div a {
+  color: #150061;
+  text-decoration: none;
 }
