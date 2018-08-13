@@ -8,7 +8,7 @@ const PORT = 8080;
 app.use(express.static(__dirname));
 app.use(express.json());
 app.use('/public', express.static('public'));
-app.use(__dirname, express.static(__dirname));
+app.use(path.join('../', __dirname), express.static('src'));
 
 const conn = mysql.createConnection({
   host: process.env.DB_HOST,
