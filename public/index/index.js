@@ -33,5 +33,5 @@ class Handler {
 
 window.onload = () => {
   const handler = new Handler();
-  handler.placeElement('#options-links', handler.buttons.admin, true);
+  handler.placeElement('#options-links', handler.buttons.admin, false);
 }

@@ -7,8 +7,7 @@ const PORT = 8080;
 
 app.use(express.static(__dirname));
 app.use(express.json());
-app.use('/public', express.static('public'));
-app.use(path.join('../', __dirname), express.static('src'));
+app.use('/public', express.static(path.join(__dirname, '../../public')));
 
 const conn = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -18,19 +17,19 @@ const conn = mysql.createConnection({
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'index.html'));
+  res.sendFile('index.html', { root: 'public/index', });
 });
 
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'login.html'));
+  res.sendFile('login.html', { root: 'public/login', });
 });
 
 app.get('/admin', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'admin.html'));
+  res.sendFile('admin.html', { root: 'public/admin', });
 });
 
 app.get('/register', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'registration.html'));
+  res.sendFile('register.html', { root: 'public/register', });
 });
 
 app.listen(PORT, () => {
