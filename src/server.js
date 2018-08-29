@@ -4,10 +4,10 @@ const mysql = require('mysql');
 const path = require('path');
 const app = express();
 const PORT = 8080;
+const htmlLink = html => path.join(__dirname, 'public', html);
 
-app.use(express.static(__dirname));
 app.use(express.json());
-app.use('/public', express.static(path.join(__dirname, '../../public')));
+app.use('/static', express.static(path.join(__dirname, 'static')));
 
 const conn = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -17,19 +17,19 @@ const conn = mysql.createConnection({
 });
 
 app.get('/', (req, res) => {
-  res.sendFile('index.html', { root: 'public/index', });
+  res.sendFile(htmlLink('index.html'));
 });
 
 app.get('/login', (req, res) => {
-  res.sendFile('login.html', { root: 'public/login', });
+  res.sendFile(htmlLink('login.html'));
 });
 
 app.get('/admin', (req, res) => {
-  res.sendFile('admin.html', { root: 'public/admin', });
+  res.sendFile(htmlLink('admin.html'));
 });
 
 app.get('/register', (req, res) => {
-  res.sendFile('register.html', { root: 'public/register', });
+  res.sendFile(htmlLink('register.html'));
 });
 
 app.listen(PORT, () => {

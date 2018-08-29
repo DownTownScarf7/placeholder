@@ -2,7 +2,7 @@ const select = target => document.querySelector(target);
 const selectAll = target => document.querySelectorAll(target);
 const create = target => document.createElement(target);
 
-class Handler {
+class OptionsBar {
   constructor() {
     this.buttons = {
       login: select('#btn-login'),
@@ -31,7 +31,4 @@ class Handler {
   }
 }
 
-window.onload = () => {
-  const handler = new Handler();
-  handler.placeElement('#options-links', handler.buttons.admin, false);
-}
+export default OptionsBar;
