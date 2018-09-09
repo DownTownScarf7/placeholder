@@ -1,56 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>admin panel</title>
 </head>
-
 <body>
-  <div id="upperPannel">
-    <h3 id="upperH3">
-      Upper pannel.
-    </h3>
-    <form id="form1">
-      <span>Name</span>
-      <input id="upperName" class="upperName" required type="text">
-      <span>Image</span>
-      <input id="upperImage" class="upperimage" required type="text">
-      <button id="upperButton" class="upperButton" type="submit" >Submit</button>
-    </form>
-  </div>
-  <div id="pannelForm">
-    <h3 id="formH3"> Form Pannel</h3>
-    <form id="form2">
-      <select id="select" class="select">
-        <option value="new">New card</option>
+  <div id="main">
+    <h1> Admin Pannel</h1>
+    <div id="dropDown">
+      <select id="selector">
+        <span>Please choose the section you want to change</span>
+        <option value="card">Card Section</option>
+        <option value="intro">Introduction</option>
       </select>
-      <input id="id" class="id" required disabled hidden type="number">
-      <span>Card type</span>
-      <input id="cardType" class="cardType" required type="text">
-      <span>Image</span>
-      <input id="formImage" class="formImage" required type="text">
-      <span>avalability</span>
-      <input id="avalable" class="avalable" required type="number">
-      <button id="formButton" class="formSubmit" type="submit"> Submit</button>
-    </form>
-  </div>
-  <div id="cardSection">
-    <h3 id="cardH3">Card Section</h3>
-    <form id="form3">
-      <span>name</span>
-      <input id="sectionName" class="sectionName" type="text" required>
-      <span>Title</span>
-      <input id="sectionTitle" class="sectionTitle" type="text" required>
-      <span>advertisment</span>
-      <input type="text" id="SectionAdvertisment" class="SectionAdvertisment" required>
-      <span>Image</span>
-      <input type="text" id="SectionImage" class="SectionImage" required>
-      <button id="sectionButton" class="sectionButton" type="submit">Submit</button>
-    </form>
+    </div>
+    <div id="intro"></div>
+    <div id="card"></div>
   </div>
 </body>
-
 </html>
