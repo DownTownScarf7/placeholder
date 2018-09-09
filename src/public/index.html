@@ -5,13 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Hamid</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="/static/styles/index.css" />
-  <script type="text/javascript" src="/static/scripts/webpack/index.js"></script>
+  <link rel="stylesheet" href="/static/styles/index.css">
+  <script type="text/javascript" src="/static/scripts/index.js"></script>
 </head>
 <body>
   <header>
     <div id="options-bar">
-      <img class="logo" src="https://png.icons8.com/ios/1600/bank-card-front-side.png" alt="logo.png">
+      <img class="logo" src="/static/images/bank-card-front-side.png" alt="logo.png">
       <div id="options-links">
         <a id="btn-login" href="./login">login</a>
         <a id="btn-register" href="./register">register</a>
@@ -19,7 +19,43 @@
     </div>
   </header>
   <div id="root">
-
+    <div id="introduction-wrapper">
+    </div>
+    <div id="purchase-wrapper">
+      <div id="card-wrapper">
+        <div id="select-wrapper">
+          <select>
+            <option>Card 1</option>
+            <option>Card 2</option>
+            <option>Card 3</option>
+          </select>
+        </div>
+        <div id="card">
+          <h2>Card Name</h2>
+          <div id="card-subWrapper">
+            <div id="card-imageWrapper">
+              <img src="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552">
+            </div>
+            <div>
+              <p>Card Description it is a long description and I don't really give a shit to use lorem ipsum for this motherfucker lala</p>
+              <div>
+                <button>Purchase</button>
+                <button>Reload</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="advertisement-wrapper">
+      
+    </div>
+    <div id="legal-wrapper">
+      
+    </div>
+    <div id="contact-wrapper">
+      
+    </div>
   </div>
 </body>
 </html>

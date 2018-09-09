@@ -14,10 +14,10 @@ window.onload = () => {
       case show:
         if (pw.type === 'password') {
           pw.type = 'text';
-          show.src = 'https://cdn3.iconfinder.com/data/icons/show-and-hide-password/100/show_hide_password-08-512.png';
+          show.src = '/static/images/eye_crossed.png';
         } else {
           pw.type = 'password';
-          show.src = 'https://cdn3.iconfinder.com/data/icons/show-and-hide-password/100/show_hide_password-07-512.png';
+          show.src = '/static/images/eye.png';
         }
         break;
     }
