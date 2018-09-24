@@ -20,6 +20,22 @@ app.get('/', (req, res) => {
   res.sendFile(htmlLink('index.html'));
 });
 
+app.get('/cards', (req, res) => {
+  const sql = `SELECT * FROM cards`;
+
+  conn.query(sql, (err, cards) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send();
+      return;
+    }
+
+    res.json({
+      cards,
+    });
+  });
+});
+
 app.get('/login', (req, res) => {
   res.sendFile(htmlLink('login.html'));
 });
