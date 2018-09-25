@@ -15,12 +15,21 @@ window.onload = () => {
 
   const assignCards = (cards) => {
     const selector = select('#card-selector');
+    const firstAvaible = cards.find(card => card.avaible);
+    const loadr = select('.loader-wrapper');
 
-    displayCard(cards.find(card => card.avaible));
-    select('#card').removeChild(select('.loader-wrapper'));
+    if (firstAvaible) {
+      displayCard(firstAvaible);
+      select('#card').removeChild(loadr);
+    } else {
+      loadr.innerHTML = null;
+      loadr.appendChild(create('span')).innerText = 'Uh-oh! Looks like there are no avaible cards right now! :(';
+    }
 
     cards.forEach((card) => {
       console.log('card: ', card);
+      if (card.introduction) console.log('yuss');
+
       if (card.avaible) {
         const option = create('option');
         option.innerText = card.name;
@@ -31,9 +40,7 @@ window.onload = () => {
     selector.addEventListener('change', (evnt) => {
       const selectedCard = cards.find(card => card.name === evnt.target.value);
 
-      if (selectedCard) {
-        displayCard(selectedCard);
-      }
+      if (selectedCard) displayCard(selectedCard);
     });
   };
 
