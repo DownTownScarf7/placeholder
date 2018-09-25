@@ -17,6 +17,11 @@ window.onload = () => {
     const selector = select('#card-selector');
     const firstAvaible = cards.find(card => card.avaible);
     const loadr = select('.loader-wrapper');
+    const introduction = cards.find(card => card.introduction);
+
+    select('#intro-wrapper').style.backgroundImage = `url(${introduction.image})`;
+    setText('#intro-title', introduction.name);
+    setText('#intro-text', introduction.description);
 
     if (firstAvaible) {
       displayCard(firstAvaible);
@@ -28,7 +33,6 @@ window.onload = () => {
 
     cards.forEach((card) => {
       console.log('card: ', card);
-      if (card.introduction) console.log('yuss');
 
       if (card.avaible) {
         const option = create('option');

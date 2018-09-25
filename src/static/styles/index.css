@@ -41,10 +41,41 @@ header {
   background-color: #807ad8;
 }
 
-#introduction-wrapper {
+#intro-wrapper {
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 100%;
   height: 500px;
-  background-image: url(https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#intro-img {
+  width: 100%;
+  z-index: 10;
+}
+
+#intro-textWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  width: 500px;
+  z-index: 20;
+  color: #FFFFFF;
+  text-shadow: 2px 2px #000000;
+}
+
+#intro-title {
+  margin-bottom: 25px;
 }
 
 #card-wrapper {
@@ -124,7 +155,15 @@ header {
   margin-right: 25px;
 }
 
-#card-subWrapper div div {
+#card-img {
+  height: 200px;
+}
+
+#card-descWrapper {
+  margin: 10px;
+}
+
+#card-btnWrapper {
   position: absolute;
   bottom: 10px;
   right: 10px;
