@@ -28,30 +28,33 @@
           </select>
         </div>
         <div id="card">
-          <h2>Card Name</h2>
+          <div id="card-loader-wrapper" class="loader-wrapper">
+            <div class="loader"></div>
+            <span>Loading...</span>
+          </div>
+          <h2 id="card-name">Loading card...</h2>
           <div id="card-subWrapper">
             <div id="card-imageWrapper">
-              <img src="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552">
+              <img id="card-img" src="https://vignette.wikia.nocookie.net/project-pokemon/images/4/47/Placeholder.png/revision/latest?cb=20170330235552">
             </div>
             <div>
-              <p>Card Description it is a long description and I don't really give a shit to use lorem ipsum for this motherfucker lala</p>
+              <p id="card-desc">Loading description...</p>
               <div>
-                <button>Purchase</button>
-                <button>Reload</button>
+                <a id="purchase" class="btn-like">Purchase</a>
+                <a id="reload" class="btn-like">Reload</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div id="advertisement-wrapper">
-      
-    </div>
+    <div id="advertisement-wrapper"></div>
     <div id="legal-wrapper">
-      
     </div>
     <div id="contact-wrapper">
-      
+      <h3>Contact me:</h3>
+      <span>+36/12 345 6789</span>
+      <span>my@email.com</span>
     </div>
   </div>
 </body>
